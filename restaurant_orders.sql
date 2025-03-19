@@ -73,6 +73,7 @@ select category, count(item_id) as num_items from order_details od left join men
          on od.item_id = mi.menu_item_id
          group by category
          order by num_items desc;
+-- most revenue generating dish by category
 select category, sum(price) as total_rev from order_details od left join menu_items mi
          on od.item_id = mi.menu_item_id
          group by category
