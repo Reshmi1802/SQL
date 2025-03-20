@@ -78,5 +78,10 @@ select category, sum(price) as total_rev from order_details od left join menu_it
          on od.item_id = mi.menu_item_id
          group by category
          order by total_rev desc;
+-- Revenue by each dish
+select item_id, item_name, category, sum(price) as total_rev from order_details od left join menu_items mi
+         on od.item_id = mi.menu_item_id
+         group by item_id
+         order by total_rev desc;
 
 
